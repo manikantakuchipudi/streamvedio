@@ -1,0 +1,110 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package com.app.dbcon;
+
+import com.app.properties.DBpropertiesRead;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author
+ */
+public class DBconnection {
+    
+    private static String dbtype=null;
+     private static String dbusername=null;
+     private static String dbpassword=null;
+     private static String dbname=null;
+     private static String dbhost=null;
+     private static String dbport=null;
+     private static DBconnection dbconObj=null;
+     private static Connection dbcon=null;
+            
+    private DBconnection()
+    {
+        dbtype=DBpropertiesRead.getProperty("dbtype");
+        dbusername=DBpropertiesRead.getProperty("username");
+        dbpassword=DBpropertiesRead.getProperty("password");
+        dbname=DBpropertiesRead.getProperty("dbname");
+        dbhost=DBpropertiesRead.getProperty("dbhost");
+        dbport=DBpropertiesRead.getProperty("dbport");
+        
+    }
+    
+   public static Connection getConnection()
+   {
+        if(dbconObj==null)
+           dbconObj=new DBconnection();
+       try
+       {
+       String url="";
+       if(dbtype.equalsIgnoreCase("MYSQL"))
+       {
+           url="jdbc:mysql://"+dbhost+":"+dbport+"/"+dbname;
+           Class.forName ("com.mysql.jdbc.Driver");
+       }
+       else if(dbtype.equalsIgnoreCase("POSGRESQL"))
+       {
+           
+           
+       }
+       System.out.println("The dynamic url prparation is :"+url);
+       dbcon=DriverManager.getConnection(url, dbusername, dbpassword);
+       }
+       catch(ClassNotFoundException classnotfe)
+       {
+           System.out.println("class not found check driver classes");
+       }
+       catch(SQLException sqlexec)
+       {
+           System.out.println("some sql Exception occured");
+           sqlexec.printStackTrace();
+       }
+       return dbcon;
+   }
+
+
+   public static void closeCon()
+   {
+        if(dbcon!=null)
+        {
+            try
+            {
+            dbcon.close();
+            dbcon=null;
+            }
+            catch(SQLException sql)
+            {
+                System.out.println("closing error"); 
+            }
+        }
+   }
+   
+   
+   
+   
+    public static void main(String[] args) {
+        System.out.println(getConnection());
+        if(dbcon!=null)
+        {
+            try
+            {
+            dbcon.close();
+            dbcon=null;
+            }
+            catch(SQLException sql)
+            {
+                
+            }
+        }
+       
+    }
+
+
+}

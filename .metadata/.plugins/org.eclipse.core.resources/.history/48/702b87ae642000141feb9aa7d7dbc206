@@ -1,0 +1,19 @@
+package com.teamz.util;
+
+public class CostEstimatorCaluculator {
+	
+	
+	private double costOfDecorations;
+	private double costOfDrinksPerPerson;
+	private double costOfFoodPerPerson;
+	
+	private double numberOfPeople;
+	
+	
+	public void costCaluclatorFormula()
+	{
+		double totalCost = costOfDecorations + ((costOfDrinksPerPerson + costOfFoodPerPerson) *
+				numberOfPeople);
+	}
+
+}

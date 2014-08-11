@@ -1,0 +1,26 @@
+2014-08-10 01:54:50,287  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 01:54:50,456  INFO (DBconnection.java:68) - The dynamic url prparation is :jdbc:mysql://localhost:3306/teamz
+2014-08-10 01:54:50,851 ERROR (DBconnection.java:78) - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'teamz'
+2014-08-10 01:55:49,648  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 01:55:49,666  INFO (DBconnection.java:68) - The dynamic url prparation is :jdbc:mysql://localhost:3306/sakila
+2014-08-10 01:55:49,866 ERROR (DBconnection.java:78) - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'sakila'
+2014-08-10 01:58:41,271  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 01:58:41,291  INFO (DBconnection.java:68) - The dynamic url prparation is :jdbc:mysql://localhost:3306/sakila
+2014-08-10 01:58:41,474 ERROR (DBconnection.java:78) - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'sakila'
+2014-08-10 01:59:16,978  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 01:59:16,995  INFO (DBconnection.java:68) - The dynamic url prparation is :jdbc:mysql://localhost:3306/mysql
+2014-08-10 01:59:37,424  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 01:59:37,441  INFO (DBconnection.java:68) - The dynamic url prparation is :jdbc:mysql://localhost:3306/mysql.teamz
+2014-08-10 01:59:37,848 ERROR (DBconnection.java:78) - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'mysql.teamz'
+2014-08-10 02:14:03,863  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 02:14:03,884  INFO (DBconnection.java:68) - The dynamic url prparation is :jdbc:mysql://localhost:3306/teamz
+2014-08-10 02:32:58,130  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 02:32:58,146  INFO (DBconnection.java:84) - The dynamic url prparation is :jdbc:mysql://localhost:3306/teamz
+2014-08-10 02:33:55,239  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 02:33:55,242  INFO (DBconnection.java:63) - JNDI property value false
+2014-08-10 02:33:55,257  INFO (DBconnection.java:85) - The dynamic url prparation is :jdbc:mysql://localhost:3306/teamz
+2014-08-10 02:34:10,479  INFO (DBpropertiesRead.java:26) - DBproperties properties Readed sucessfully
+2014-08-10 02:34:10,482  INFO (DBconnection.java:63) - JNDI property value true
+2014-08-10 02:34:10,514 ERROR (DBconnection.java:106) - javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+2014-08-10 02:34:10,514  INFO (DBconnection.java:63) - JNDI property value false
+2014-08-10 02:34:10,527  INFO (DBconnection.java:85) - The dynamic url prparation is :jdbc:mysql://localhost:3306/teamz

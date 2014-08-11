@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+
+
+var user_selection=Backbone.Model.extend(
+{
+	
+
+	// Will contain three attributes.
+	// These are their default values
+
+	defaults:{
+		title: 'My service',
+		price: 100,
+		checked: false
+	},
+
+	// Helper function for checking/unchecking a service
+	toggle: function(){
+		this.set('checked', !this.get('checked'));
+	}}		
+
+
+);
+
+
+
+var user_selectionList = Backbone.Collection.extend({
+
+	// Will hold objects of the Service model
+	model: user_selection,
+
+	// Return an array only with the checked services
+	getChecked: function(){
+		return this.where({checked:true});
+	}
+});
+
+var user_selectiondata = new user_selectionList([
+                        		new user_selection({ title: 'Food Cost Per Person', price: 25}),
+                        		new user_selection({ title: 'Drink Cost', price: 20}),
+                        		new user_selection({ title: 'photography', price: 100}),
+                        		new user_selection({ title: 'coffee drinking', price: 10})
+                        		// Add more here
+                        	]);

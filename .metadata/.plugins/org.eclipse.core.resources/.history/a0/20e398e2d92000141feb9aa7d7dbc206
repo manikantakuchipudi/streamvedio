@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+
+
+var user_selection=Backbone.Model.extend(
+{
+	
+}		
+
+
+);
+
+
