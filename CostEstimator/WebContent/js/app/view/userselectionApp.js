@@ -16,18 +16,12 @@
 			// service objects in the collection.
     		this.listenTo(user_selectiondata, 'change', this.render);
 
-			
+    		
 			// Create views for every one of the services in the
 			// collection and add them to the page
 
 			user_selectiondata.each(function(user_selection){
-				
-			
-
 				var view = new user_selection_view({ model: user_selection });
-				
-				
-			
 				this.list.append(view.render().el);
 
 			}, this);	// "this" is the context in the callback
@@ -39,14 +33,29 @@
 			// the prices of only the checked elements
 
 			var total = 0;
-
+			var totalvalue = 0;
 			_.each(user_selectiondata.getChecked(), function(elem){
-				total += elem.get('price');
+				if(elem.get('price')!=undefined||elem.get('price')!=null)
+					{
+					var option = document.getElementById('persons').value;
+					total += elem.get('price');
+					totalvalue+=total*option;
+				    }
+					else if(elem.get('percent')!=undefined||elem.get('percent')!=null)
+					{
+					totalvalue=(totalvalue-(totalvalue*5)/100);
+				    }
+					else if(elem.get('dcprice')!=undefined||elem.get('dcprice')!=null)
+					{
+							var dcprice=elem.get('dcprice');
+							var option = document.getElementById('persons').value;
+							totalvalue+=dcprice+(elem.get('costperperson')*option);
+				   }
+				
+				
+				
 			});
-
-			// Update the total price
-			this.total.text('$'+total);
-
+			this.total.text('$'+totalvalue);
 			return this;
 
 		}

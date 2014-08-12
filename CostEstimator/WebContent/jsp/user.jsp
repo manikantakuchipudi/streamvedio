@@ -5,10 +5,8 @@
     
     
   <%
-  
   Connection db= DBconnection.getConnection();
   DBconnection.closeCon();
-  
   %>  
     
     
@@ -23,4 +21,3 @@
 <body>
 <h1>hiii</h1>
 </body>
-</html>

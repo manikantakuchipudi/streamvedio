@@ -2,23 +2,24 @@
     pageEncoding="ISO-8859-1"%>
  <%
  String conformationid="000";
- if(request.getParameter("conformID")!=null)
- conformationid=request.getParameter("conformID");
+ 
+ if(session.getAttribute("conformationid")!=null)
+ conformationid=(String)session.getAttribute("conformationid");
  %>   
     
-<jsp:include page="header.jsp"></jsp:include>    
+<jsp:include page="/header"></jsp:include>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Thankyou page</title>
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel='stylesheet' />
+<link href="./css/style.css" rel="stylesheet" />
 </head>
 <body>
 <center>
-<h1>
-Thank you booking this event your conformation id is <%=conformationid%>
-</h1>
+<p>Thank you booking this event your conformation id is <%=conformationid%></p>
 </center>
 </body>
 </html>
- <jsp:include page="footer.jsp"></jsp:include>    
+ <jsp:include page="/footer"></jsp:include>    

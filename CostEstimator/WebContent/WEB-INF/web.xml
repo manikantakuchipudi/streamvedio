@@ -3,5 +3,94 @@
   	 <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    
+    
+     <servlet>
+        <servlet-name>application</servlet-name>
+        <jsp-file>/jsp/application.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>application</servlet-name>
+        <url-pattern>/application</url-pattern>
+     </servlet-mapping>
+    
+   
+     <servlet>
+        <servlet-name>header</servlet-name>
+        <jsp-file>/jsp/header.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>header</servlet-name>
+        <url-pattern>/header</url-pattern>
+    </servlet-mapping>
+  
+  
+  
+   <servlet>
+        <servlet-name>footer</servlet-name>
+        <jsp-file>/jsp/footer.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>footer</servlet-name>
+        <url-pattern>/footer</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>selection</servlet-name>
+        <jsp-file>/jsp/selection.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>selection</servlet-name>
+        <url-pattern>/selection</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>checkout</servlet-name>
+        <jsp-file>/jsp/checkoutpage.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkout</servlet-name>
+        <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>addresssave</servlet-name>
+        <jsp-file>/jsp/addresssave.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addresssave</servlet-name>
+        <url-pattern>/addresssave</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>thankyou</servlet-name>
+        <jsp-file>/jsp/thankyou.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>thankyou</servlet-name>
+        <url-pattern>/thankyou</url-pattern>
+    </servlet-mapping>
+    
+   
+   
+    <servlet>
+        <servlet-name>usersset</servlet-name>
+        <jsp-file>/jsp/usersset.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>usersset</servlet-name>
+        <url-pattern>/usersset</url-pattern>
+    </servlet-mapping>
+    
+   
+    
+    
+    
+    
+  
+  
   
 </web-app>

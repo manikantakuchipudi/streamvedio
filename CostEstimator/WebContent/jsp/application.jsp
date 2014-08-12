@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 
 
-  <script src="../js/lib/vendor/json2.js"></script>
-  <script src="../js/lib/vendor/jquery-1.10.2.min.js"></script>
-  <script src="../js/lib/vendor/qunit.js"></script>
-  <script src="../js/lib/vendor/underscore.js"></script>
-  <script src="../js/lib/vendor/backbone.js"></script>
+  <script src="./js/lib/vendor/json2.js"></script>
+  <script src="./js/lib/vendor/jquery-1.10.2.min.js"></script>
+  <script src="./js/lib/vendor/qunit.js"></script>
+  <script src="./js/lib/vendor/underscore.js"></script>
+  <script src="./js/lib/vendor/backbone.js"></script>
 </head>
 <body>
 
