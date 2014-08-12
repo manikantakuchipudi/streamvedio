@@ -1,10 +1,35 @@
+<%@page import="com.teamz.util.AddressStore"%>
+<%@page import="org.json.JSONObject"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%
- String conformationid="000";
  
+ 
+ String name=request.getParameter("name");
+ String phonenumber=request.getParameter("phonenumber");
+ String date=request.getParameter("bookdate");
+ String address=request.getParameter("address");
+ 
+ 
+ 
+ name="name";
+ phonenumber="11111111";
+ date="111111";
+ address="ddddd";
+ 
+ 
+String conformationid="000";
  if(session.getAttribute("conformationid")!=null)
+ {
  conformationid=(String)session.getAttribute("conformationid");
+ JSONObject addresObject=new JSONObject();
+ addresObject.put("name",name);
+ addresObject.put("phonenumber",phonenumber);
+ addresObject.put("bookdate",date);
+ addresObject.put("address",address);
+ addresObject.put("eventid",conformationid);
+ new AddressStore(addresObject);
+ }
  %>   
     
 <jsp:include page="/header"></jsp:include>    
