@@ -28,7 +28,7 @@ session.setAttribute("noofusers",10);
 	        async:   false,
 			success:function(val)
 		    {
-		  		retrunvalue=true;
+			retrunvalue=true;
 		  		
 		    },
 	   parse:function(response)
@@ -41,7 +41,6 @@ session.setAttribute("noofusers",10);
 	}
  
  
-
 </script>
 <body>
 
