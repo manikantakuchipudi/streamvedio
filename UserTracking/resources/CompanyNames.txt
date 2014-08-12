@@ -1,0 +1,7 @@
+Borland
+Microsoft
+IBM
+Intel
+Compaq
+NEC
+Oracle
