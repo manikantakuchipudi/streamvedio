@@ -8,6 +8,17 @@ public class CostEstimatorCaluculator {
 	private double costOfFoodPerPerson;
 	private double numberOfPeople;
 	private double totalCost;
+	private double discountvalue;
+	public double getDiscountvalue() {
+		return discountvalue;
+	}
+
+
+	public void setDiscountvalue(double discountvalue) {
+		this.discountvalue = discountvalue;
+	}
+
+
 	private boolean HealthyOption;
 
 	public void setTotalCost()
@@ -16,16 +27,25 @@ public class CostEstimatorCaluculator {
 				numberOfPeople);
 	}
 
+	
+	
+	
+	
 
 	public double getTotalCost()
 	{
-
+		setTotalCost();
 		if (HealthyOption)
-			return totalCost *.95;
-		else
+		{
+			System.out.println("HealthyOption"+100+((getDiscountvalue())/100));
+			
+		
+		return totalCost *((100+getDiscountvalue())/100);
+		}
+		else 
 			return totalCost;
-
-	}
+		}
+	
 
 
 	public boolean isHealthyOption() {
