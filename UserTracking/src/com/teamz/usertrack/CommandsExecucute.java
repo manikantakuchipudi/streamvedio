@@ -1,6 +1,7 @@
 package com.teamz.usertrack;
 
 import java.util.Hashtable;
+import java.util.Scanner;
 import java.util.Vector;
 
 
@@ -82,7 +83,7 @@ public class CommandsExecucute {
 		}
 		else if(command.equalsIgnoreCase("CHANGE"))
 		{
-			
+			changeCompany(usercommand);
 		}
 		else if(command.equalsIgnoreCase("QUIT"))
 		{
@@ -90,7 +91,7 @@ public class CommandsExecucute {
 		}
 		else if(command.equalsIgnoreCase("PAYDAY"))
 		{
-			
+			userPayDay();
 		}
 		else if(command.equalsIgnoreCase("EMPLOYEES"))
 		{
@@ -122,6 +123,7 @@ public class CommandsExecucute {
 	public void viewUnEmployedUsers()
 	{
 
+		System.out.println(unemployedPersons);
 		for(int i=0;i<unemployedPersons.size();i++)
 		{
 			System.out.println(unemployedPersons.get(i));
@@ -141,6 +143,10 @@ public class CommandsExecucute {
 	public void viewEmployes(String[] usercommand)
 	{
 
+		
+		
+		if(usercommand.length>=2)
+		{
 		String companyName=usercommand[1];
 		Vector<String> listofcompanyusers=companyusers.get(companyName);
 		System.out.println(listofcompanyusers);
@@ -149,8 +155,66 @@ public class CommandsExecucute {
 			System.out.println(listofcompanyusers.get(i));
 			
 		}
+		}
+		else
+		{
+			System.out.println("INVALID COMMAND");
+		}
 	}
 	
+	public String findUserCompany(String username)
+	{
+		
+		Vector<String> companysUsers=null;
+ 		for(int i=0;i<companyusers.size();i++)
+		{
+			for(int j=0;j<comapnys.size();j++)
+			{
+				companysUsers=companyusers.get(comapnys.get(i));
+				if(isUserExist(companysUsers, username))
+				{
+					return comapnys.get(i);
+				}
+			}
+		}
+		return null;
+	}
+	
+	
+	
+	public void changeCompany(String[] usercommand)
+	{
+		String previousCompany=findUserCompany(usercommand[1]);
+		if(previousCompany!=null)
+		{
+		String[] quituser=new String[3];
+		quituser[0]="QUIT";
+		quituser[1]=usercommand[1];
+		quituser[2]=previousCompany;
+		quitCommand(quituser);
+		JoinCommand(usercommand);
+		}
+		else
+		{
+			System.out.println("USER NOT JOIND ANY PREVOUS COMPANY");
+			Scanner sc=new Scanner(System.in);
+			System.out.println("user is not joind so fresly joined in that company press Y else N");
+			String userinput=sc.nextLine();
+			if(userinput.equalsIgnoreCase("Y"))
+			{
+				usercommand[0]="JOIN";
+				JoinCommand(usercommand);
+			}
+			else
+			{
+				
+			}
+		
+		sc=null;
+		}
+		
+		
+	}
 	
 	public void JoinCommand(String[] usercommand)
 	{
@@ -159,8 +223,10 @@ public class CommandsExecucute {
 	String name=usercommand[1];
 	String company=usercommand[2];
 	Vector<String> listofactions=null;
-
-	
+    if(!comapnys.contains(company))
+    	comapnys.add(company);
+    	
+    	
 	if(isUserExist(unemployedPersons, name))
 	{
 		updateunEmployedVector(name);
@@ -168,8 +234,6 @@ public class CommandsExecucute {
 	
 	if(!isUserExist(comapnyusersList,name))
 	{
-		
-	
 	if(isUserExist(users,name))
 	{
 		listofactions=useractions.get(name);
@@ -187,10 +251,11 @@ public class CommandsExecucute {
 	
 	if(companyusers.get(company)!=null)
 	{
-		comapnyusersList=companyusers.get(company);
+		Vector<String> userlist=companyusers.get(company);
+		userlist.add(name);
 		comapnyusersList.add(name);
-		companyusers.put(company,comapnyusersList);
-	
+		companyusers.put(company,userlist);
+
 	}
 	else
 	{   
@@ -216,6 +281,20 @@ public class CommandsExecucute {
     }
 	
 	
+	
+	public void userPayDay()
+	{
+	System.out.println(comapnyusersList);
+	 Vector<String> listofactions=null;
+	for(int i=0;i<comapnyusersList.size();i++)
+	{
+		listofactions=useractions.get(comapnyusersList.get(i));
+		listofactions.add("PAYDAY");
+		useractions.put(comapnyusersList.get(i),listofactions);
+	}
+	System.out.println(useractions);
+	
+	}
 	
 	
 	
@@ -261,12 +340,6 @@ public class CommandsExecucute {
 	//System.out.println(companyusers);
     }
 	
-	public void changeCommand(String[] usercommand)
-	{
-	
-	
-	
-    }
 	
 	public void updateunEmployedVector(String name)
 	{
