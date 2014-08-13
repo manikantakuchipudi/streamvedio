@@ -30,13 +30,11 @@ public class UserTrackSystem {
 		{
 			cmd= sc.nextLine();
 			cmdspliter=cmd.trim().split(" ");
-			
-			
-			
 			if(isvalidCompanyNames(listofcompanys,cmdspliter[cmdspliter.length-1])||cmdspliter.length==1)
 			{
 			String returncommand=cmdexecutor.CommandsExecute(cmdspliter[0], cmdspliter);
-			 if(returncommand.equals("true"))
+			
+			if(returncommand.equals("true"))
 				flag=true;
 			else if(returncommand.equals("false"))
 			{
