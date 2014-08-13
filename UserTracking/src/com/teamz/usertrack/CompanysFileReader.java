@@ -19,8 +19,9 @@ public class CompanysFileReader {
 		String stline=null;
 		try
 		{
+		
 			if(filename==null)
-			br=new BufferedReader(new FileReader("CompanyNamex.txt"));
+			br=new BufferedReader(new FileReader("resources/CompanyNames.txt"));
 			else
 				br=new BufferedReader(new FileReader(filename));
 			while((stline=br.readLine())!=null)
@@ -30,7 +31,7 @@ public class CompanysFileReader {
 		}
 		catch(IOException e)
 		{
-			
+			e.printStackTrace();
 		}
 		finally
 		{
