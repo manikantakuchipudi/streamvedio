@@ -4,11 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import javax.media.Manager;
 import javax.media.MediaLocator;
 import javax.media.Player;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+
+import com.app.properties.ClientPropertiesRead;
 
 /**
  *
@@ -28,6 +31,27 @@ public class MediaPlayer extends javax.swing.JPanel {
 
 		add(control, BorderLayout.SOUTH);            // place the control in  panel
 		mediaPlayer.start();
+	}
+	
+	public void vlcPlayer(String playfile)
+	{
+		ProcessBuilder pb=null;
+		try
+		{
+		pb = new ProcessBuilder(ClientPropertiesRead.getProperty("VLCPLAYERPATH"), "--one-instance", playfile);
+		pb.start();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+		if(pb!=null)
+		{
+			pb=null;
+		}
+		}
 	}
 
 

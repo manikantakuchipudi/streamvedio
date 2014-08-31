@@ -5732,3 +5732,33 @@
 2014-08-31 05:03:40,683  INFO (Client.java:75) - Check server starts or not 
 
 2014-08-31 05:03:40,684 ERROR (Client.java:76) - java.net.ConnectException: Connection refused: connect
+2014-08-31 06:25:53,068  INFO (ServerPropertiesRead.java:16) - Serverconn properties Readed sucessfully
+2014-08-31 06:25:53,089  INFO (Server.java:77) - server starts the application
+2014-08-31 06:25:53,090  INFO (Server.java:78) - true
+2014-08-31 06:25:53,091  INFO (Server.java:82) - server waiting clients connection
+2014-08-31 06:25:59,851  INFO (ClientPropertiesRead.java:14) - Clientconn properties Readed sucessfully
+2014-08-31 06:25:59,905  INFO (Server.java:84) - client connection is established
+2014-08-31 06:25:59,906  INFO (Server.java:85) - Server is conected to client ip is : Socket[addr=/127.0.0.1,port=61142,localport=8057]
+2014-08-31 06:25:59,906  INFO (Server.java:86) - Server is conected to client ip is : /127.0.0.1
+2014-08-31 06:25:59,987  INFO (Server.java:82) - server waiting clients connection
+2014-08-31 06:26:11,411  INFO (ClientPropertiesRead.java:14) - Clientconn properties Readed sucessfully
+2014-08-31 06:26:11,435  INFO (Server.java:84) - client connection is established
+2014-08-31 06:26:11,436  INFO (Server.java:85) - Server is conected to client ip is : Socket[addr=/127.0.0.1,port=61146,localport=8057]
+2014-08-31 06:26:11,437  INFO (Server.java:86) - Server is conected to client ip is : /127.0.0.1
+2014-08-31 06:26:11,438  INFO (Server.java:82) - server waiting clients connection
+2014-08-31 06:26:11,688  INFO (ClentMessageReader.java:54) - readobject >>>>> :getfiles
+2014-08-31 06:26:11,736  INFO (ListofVedios.java:27) - srcdir Location :>>>D:\Manik\Audiocheck
+2014-08-31 06:26:11,793  INFO (ServerMessageRecevier.java:40) - Mesaage read from server[abc.wav, Jalsa.flv, Rabhasa.mp4, Rabhasa.wav, xyz.wav]
+2014-08-31 06:26:16,618  INFO (ClientUIDesign.java:117) - play button is clicked by user
+2014-08-31 06:26:16,618  INFO (ClentMessageReader.java:63) - readobject >>>>> :download
+2014-08-31 06:26:16,619  INFO (ClentMessageReader.java:66) - readobject >>>>> :Rabhasa.mp4
+2014-08-31 06:26:16,662  INFO (ClentMessageReader.java:72) - Sending Files...
+2014-08-31 06:26:17,001  INFO (ServerMessageRecevier.java:50) - Mesaage read from server byte array[B@9b1ac
+2014-08-31 06:26:17,009  INFO (PlayVedio.java:24) - playing vedio file hereeeC:\Users\KUCHIP~1\AppData\Local\Temp\\Rabhasa.mp4
+2014-08-31 06:26:53,688  INFO (ClientUIDesign.java:117) - play button is clicked by user
+2014-08-31 06:26:53,689  INFO (ClentMessageReader.java:63) - readobject >>>>> :download
+2014-08-31 06:26:53,689  INFO (ClentMessageReader.java:66) - readobject >>>>> :Jalsa.flv
+2014-08-31 06:26:53,836  INFO (ClentMessageReader.java:72) - Sending Files...
+2014-08-31 06:26:54,104  INFO (ServerMessageRecevier.java:50) - Mesaage read from server byte array[B@103c520
+2014-08-31 06:26:54,113  INFO (PlayVedio.java:24) - playing vedio file hereeeC:\Users\KUCHIP~1\AppData\Local\Temp\\Jalsa.flv
+2014-08-31 06:27:41,912 ERROR (ClentMessageReader.java:81) - java.net.SocketException: Connection reset

@@ -119,19 +119,11 @@ public class ClientUIDesign extends javax.swing.JFrame {
     	client.downloadfileMessage("download", jComboBox1.getSelectedItem().toString());
     	else
         JOptionPane.showConfirmDialog(null, "Error occured check logs");
-    	
-    	
-    	
-    	
-        // TODO add your handling code here:
-    }                                        
+     }                                        
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-     
-    	System.out.println(jComboBox1.getSelectedItem().toString());
-    	
-    	
-    }                                          
+     logger.info(jComboBox1.getSelectedItem().toString());
+   }                                          
 
     /**
      * @param args the command line arguments
