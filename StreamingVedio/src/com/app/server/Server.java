@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 
 import com.app.properties.ServerPropertiesRead;
+import com.app.server.util.ClentMessageReader;
+
 import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
@@ -21,7 +23,7 @@ public class Server {
     private JTextArea clientTextArea = null;
     private JTextArea serverTextArea = null;
     private String sendMessage=null;
-    private MessageRecevier mesrecv=null;
+   
     private boolean isPortInUse() {
         boolean result;
         try {
@@ -82,8 +84,8 @@ public class Server {
                 logger.info("client connection is established");
                 logger.info("Server is conected to client ip is : " + _CLIENTSOCKET);
                 logger.info("Server is conected to client ip is : " + _CLIENTSOCKET.getInetAddress());
-                mesrecv=new MessageRecevier(_CLIENTSOCKET,serverTextArea,clientTextArea);
-
+                //mesrecv=new MessageRecevier(_CLIENTSOCKET,serverTextArea,clientTextArea);
+                new ClentMessageReader(_CLIENTSOCKET);
              
             } catch (IOException e) {
                 logger.info("client connection is closed ");
@@ -109,7 +111,6 @@ public class Server {
     public void sendMessage(String sendmessage)
     {
         this.sendMessage=sendmessage;
-        mesrecv.messagesender(sendmessage);
     }
 
     public void stopserver() {
@@ -125,5 +126,12 @@ public class Server {
             }
         }
     }
+    
+    public static void main(String[] args)
+    {
+    	Server servers=new Server();
+    	servers.startServer();
+    }
+    
 
 }

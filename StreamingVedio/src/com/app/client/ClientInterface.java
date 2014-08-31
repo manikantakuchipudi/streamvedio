@@ -11,7 +11,7 @@ public interface ClientInterface {
 	public Socket createCon();
 	public void fileTransfer(String file,String typeofdata);
 	public void closeCon();
-        public void sendMessage(String message);
+    public void sendMessage(String message);
 	
 	
 

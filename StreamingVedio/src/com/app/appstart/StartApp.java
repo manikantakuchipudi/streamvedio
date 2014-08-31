@@ -6,7 +6,9 @@
 
 package com.app.appstart;
 
-import com.app.client.ClientUI;
+import com.app.client.Client;
+import com.app.client.util.ClientUIDesign;
+import com.app.server.Server;
 import com.app.server.ServerUI;
 
 /**
@@ -17,8 +19,20 @@ public class StartApp {
     
     public static void main(String[] args) {
         
-        ServerUI si=new ServerUI();
-        ClientUI cu=new ClientUI();
+    	
+    	  Server s=new Server();
+    	 
+    	 
+    	 
+    	  new ClientUIDesign().setVisible(true);
+    	
+    	 
+    	// Client c2=new Client();
+    	 
+    	 
+    	 
+       // ServerUI si=new ServerUI();
+        //ClientUI cu=new ClientUI();
     }
     
     
